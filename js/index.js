@@ -56,7 +56,7 @@ select.onchange = function() {
   }
 }
 
-function update(bgColor, textColor) {
-  html.style.backgroundColor = bgColor;
-  html.style.color = textColor;
+function update(x, y) {
+  html.style.backgroundColor = x;
+  html.style.color = y;
 }
