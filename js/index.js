@@ -1,6 +1,3 @@
-
-
-
 // const select = document.querySelector('select');
 // const list = document.querySelector('ul');
 // const selectedMonth = document.querySelector('h3');
@@ -36,7 +33,7 @@ const html = document.querySelector('.output');
 
 select.onchange = function() {
   const newChoice = select.value;
-  switch(newChoice) {
+  switch (newChoice) {
     case 'white':
       update('white', 'black');
       break;
@@ -52,7 +49,7 @@ select.onchange = function() {
     case 'psychedelic':
       update('lime', 'purple');
       break;
-      
+
   }
 }
 
@@ -79,10 +76,10 @@ select.onchange = function() {
 
 
 
-// image changer
+  // image changer
 
-let myButton = document.querySelector('button');
-let myHeading = document.querySelector('h3');
+  let myButton = document.querySelector('button');
+  let myHeading = document.querySelector('h3');
 
   createCalendar(days, choice);
 }
@@ -106,7 +103,7 @@ const html = document.querySelector('.output');
 
 select.onchange = function() {
   const newChoice = select.value;
-  switch(newChoice) {
+  switch (newChoice) {
     case 'white':
       update('white', 'black');
       break;
@@ -122,7 +119,7 @@ select.onchange = function() {
     case 'psychedelic':
       update('lime', 'purple');
       break;
-      
+
   }
 }
 
@@ -137,7 +134,7 @@ let myImages = document.querySelector('img');
 
 myImages.addEventListener('click', () => {
   let imageSrc = myImages.getAttribute('src');
-  if(imageSrc === "images/kaduna2018.jpg"){
+  if (imageSrc === "images/kaduna2018.jpg") {
     myImages.setAttribute('src', 'images/selfkaduna.jpg');
   } else if (imageSrc === 'images/selfkaduna.jpg') {
     myImages.setAttribute('src', 'images/student.jpg');
@@ -148,16 +145,17 @@ myImages.addEventListener('click', () => {
 // Set user login
 
 let myButton = document.querySelector('button');
-let welcomeMessage = document.querySelector('h3');
+let welcomeMessage = document.querySelector('h4');
 
 function setUserName() {
   let myName = prompt('Please enter your name.');
-  localStorage.setItem('user', myName);
+  localStorage.setItem('user',
+    myName);
   welcomeMessage.textContent = 'We are glad to see you, ' + myName;
 }
 // Checking if the user is an existing user. Otherwise, take the name of new user and save it in localstorage.
 
-if(!localStorage.getItem('user')) {
+if (!localStorage.getItem('user')) {
   setUserName();
 } else {
   let storedName = localStorage.getItem('user');
