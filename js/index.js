@@ -149,10 +149,13 @@ let welcomeMessage = document.querySelector('h4');
 
 function setUserName() {
   let myName = prompt('Please enter your name.');
+  if(!myName) {
+    setUserName();
+  } else {
   localStorage.setItem('user',
     myName);
   welcomeMessage.textContent = 'We are glad to see you, ' + myName;
-}
+}}
 // Checking if the user is an existing user. Otherwise, take the name of new user and save it in localstorage.
 
 if (!localStorage.getItem('user')) {
