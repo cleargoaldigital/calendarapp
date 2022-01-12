@@ -77,6 +77,13 @@ select.onchange = function() {
     days = 30;
   }
 
+
+
+// image changer
+
+let myButton = document.querySelector('button');
+let myHeading = document.querySelector('h3');
+
   createCalendar(days, choice);
 }
 
@@ -138,3 +145,21 @@ myImages.addEventListener('click', () => {
     myImages.setAttribute('src', 'images/student.jpg');
   }
 });
+// Set user login
+
+let myButton = document.querySelector('button');
+let welcomeMessage = document.querySelector('h3');
+
+function setUserName() {
+  let myName = prompt('Please enter your name.');
+  localStorage.setItem('user', myName);
+  welcomeMessage.textContent = 'We are glad to see you, ' + myName;
+}
+// Checking if the user is an existing user. Otherwise, take the name of new user and save it in localstorage.
+
+if(!localStorage.getItem('user')) {
+  setUserName();
+} else {
+  let storedName = localStorage.getItem('user');
+  welcomeMessage.textContent = 'Good to see you again, ' + storedName;
+}
