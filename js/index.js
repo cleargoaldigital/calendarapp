@@ -162,6 +162,11 @@ if (!localStorage.getItem('user')) {
   welcomeMessage.textContent = 'Good to see you again, ' + storedName;
 }
 
+
+myButton.onclick = () => {
+  setUserName();
+};
+
 // set copyright year.
 const currentYear = document.querySelector('#year');
 currentYear.textContent = new Date().getFullYear();
